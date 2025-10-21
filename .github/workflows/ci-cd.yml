@@ -24,8 +24,8 @@ jobs:
           context: .
           push: true
           tags: |
-            joaovfceppo/fastapi-app:latest
-            joaovfceppo/fastapi-app:${{ github.sha }}
+            joaovitorceppo/fastapi-app:latest
+            joaovitorceppo/fastapi-app:${{ github.sha }}
 
       - name: Checkout manifests repository
         uses: actions/checkout@v3
@@ -37,7 +37,7 @@ jobs:
       - name: Update Kubernetes manifest
         run: |
           cd fastapi-manifests
-          sed -i 's|image: .*|image: joaovfceppo/fastapi-app:${{ github.sha }}|' deployment.yaml
+          sed -i 's|image: .*|image: joaovitorceppo/fastapi-app:${{ github.sha }}|' deployment.yaml
 
       - name: Commit and push changes
         run: |
