@@ -4,4 +4,4 @@ app = FastAPI()
 # teste do pipeline
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"Mensagem teste para verificar se o CI/CD está funcionando!"}
